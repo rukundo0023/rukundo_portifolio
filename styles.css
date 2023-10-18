@@ -66,7 +66,7 @@ nav {
 }
 
 .text-box h1 {
-    font-size: 62px;
+    font-size: 20px;
 }
 
 .text-box p {
@@ -153,4 +153,27 @@ img {
     text-decoration: none;
     display: inline-block;
     transition: 0.5s;
+}
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+}
 
+h1 {
+    text-align: center;
+}
+
+.contact-info {
+    margin: 20px 0;
+}
+
+.contact-info p {
+    margin: 10px 0;
+}
+.content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}

@@ -12,18 +12,19 @@
 <body>
     <header class="header">
         <a href="#" class="logo">RN</a>
+        <i class="fa fa-bars menu-icon"></i>
         <nav>
             <div class="nav-links" id="navlinks">
-                <i class="fa fa-times"></i>
+                <i class="fa fa-times close-icon"></i>
                 <ul>
                     <li><a href="#">HOME</a></li>
                     <li><a href="https://docs.google.com/document/d/1yv2pIIDAaHYJi1dCXfadd9eLeycVdfWg_TwmA3nH12k/edit"
                         target="_blank"
                         class="btn"
                         >CV</a></li>
-                    <li><a href="#">EDUCATION</a></li>
-                    <li><a href="#">CONTACT US</a></li>
-          
+                    <li><a href="#education">EDUCATION</a></li>
+                    <li><a href="#contact">CONTACT US</a></li>
+                </ul>
             </div>
         </nav>
         <div class="text-box">
@@ -34,18 +35,19 @@
         </div>
     </header>
     
-    <section class="content">
+    <section id="education" class="content">
         <h2>Education</h2>
         <p>Rukundo Nshimiyimana is a dedicated software engineering student at African Leadership University, known for academic excellence. With a strong foundation in high school education at E.S Kanombe Effotec, Rukundo has continued to excel in the field of software engineering, consistently demonstrating a passion for technology and a commitment to personal and professional growth.</p>
     </section>
 
-    <div class="contact-container">
-        <h1>Contact Us</h1>
+    <section id="contact" class="contact-container">
+        <h2>Contact Us</h2>
         <div class="contact-info">
             <p>Email: <a href="mailto:contact@example.com">r.nshimiyim@alustudent.com</a></p>
             <p>Phone: <a href="tel:+250780381227">+250780381227</a></p>
-            <p>Address: kk 101 st, kigali, Rwanda</p>
+            <p>Address: kk 101 st, Kigali, Rwanda</p>
         </div>
+    </section>
 
     <footer class="footer">
         <p>&copy; 2023 Portfolio website | Designed by Rukundo Nshimiyimana</p>
@@ -53,12 +55,35 @@
 
     <script>
         // JavaScript for interactivity
+        
+        // Mobile menu toggle
+        const menuIcon = document.querySelector(".menu-icon");
+        const closeIcon = document.querySelector(".close-icon");
         const navLinks = document.getElementById("navlinks");
-        const menuIcon = document.querySelector(".fa.fa-times");
 
-        // Toggle the navigation menu when the menu icon is clicked
         menuIcon.addEventListener("click", () => {
-            navLinks.classList.toggle("active");
+            navLinks.classList.add("active");
+        });
+
+        closeIcon.addEventListener("click", () => {
+            navLinks.classList.remove("active");
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        behavior: 'smooth',
+                        top: targetElement.offsetTop,
+                    });
+                }
+            });
         });
     </script>
 </body>
